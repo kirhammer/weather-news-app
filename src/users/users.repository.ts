@@ -7,7 +7,11 @@ import { User } from './entities/user.entity';
 export class UsersRepository {
   constructor(private dataSource: DataSource) {}
 
-  async findAll() {
-    return this.dataSource.getRepository(User).find();
+  async findByEmail(email: string): Promise<User | null> {
+    return this.dataSource.getRepository(User).findOne({
+      where: {
+        email,
+      },
+    });
   }
 }
