@@ -1,7 +1,8 @@
 import { Controller, Get, Request, UseGuards } from '@nestjs/common';
 import { Request as RequestInfo } from 'express';
 
-import { JwtAuthGuard } from '../auth/jwt-auth.guard';
+import { JwtAuthGuard } from '@modules/auth/passport-config/jwt-auth.guard';
+
 import { User } from './entities/user.entity';
 
 @Controller('users')
